@@ -1,0 +1,18 @@
+Targeted features:
+-Show time DONE
+-Show date DONE
+-Show weather DONE
+-Show outside temperature DONE
+-Multiple alarms
+-Wake up with sounds/mp3
+-Have display
+-Wake up with podcast
+-Wake up with QR code
+-Wake up with video of
+-Show inside temperature
+-Show news
+-Wake screen with motion to save power and avoid glare
+-Google home function
+-Security camera
+-Attach mini peltier fridge with temperature readout and item detection
+-Attached security camera to remote controlled mobile unit
