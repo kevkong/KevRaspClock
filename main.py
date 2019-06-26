@@ -3,6 +3,7 @@ from datetime import datetime as dt
 from weather import Weather, Unit
 import requests
 import time
+import os
 
 class WEATHER(object):
     def __init__(self):
@@ -57,7 +58,7 @@ class CLOCK(object):
         self.RUN_CLOCK = True
         print (self.date)
         print ("Today is " + self.day)
-        alarm = ALARM("00:51")
+        alarm = ALARM("07:00")
         self.alarmTime = alarm.getAlarmTime()
     
     def start(self):
@@ -67,6 +68,9 @@ class CLOCK(object):
                 print (timeNow)
                 if timeNow[:-3] == self.alarmTime:
                     print ("WAKE UP NOW !!!")
+                    os.system("omxplayer --loop Sounds/example.mp3 &")
+                    time.sleep(15)
+                    os.system("killall omxplayer.bin")
                     self.RUN_CLOCK = False
                 time.sleep(1)
                 
