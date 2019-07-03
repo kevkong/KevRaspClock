@@ -4,7 +4,7 @@ import time
 class CLOCK(object):
     def __init__(self, alarms):
         print ("Starting Clock")
-        self.dateFormat = "%d/%b/%Y"
+        self.dateFormat = "%d-%b-%Y"
         self.timeFormat = "%H:%M:%S"
         self.dayFormat = "%A"
         self.datetime = dt.today()
@@ -37,5 +37,9 @@ class CLOCK(object):
             time.sleep(1)
             #with lock:
             #    print (timeNow)
-    def get_current_time(self):
-        return self.time
+    def getCurrentTime(self):
+        return dt.today().strftime(self.timeFormat)
+    
+    def getCurrentDate(self):
+        return dt.today().strftime(self.dateFormat)
+        

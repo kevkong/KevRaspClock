@@ -5,6 +5,7 @@ from weather import WEATHER
 from alarm import ALARM
 from utils import ThreadHandler
 from clock import CLOCK
+from controller import CONTROLLER
 
 class ALLINPUT(object):
     def __init__(self, clock, alarms, weather):
@@ -29,7 +30,7 @@ class ALLINPUT(object):
 
         if matchSetGetTime:
             with lock:
-                print (self.clock.get_current_time())
+                print (self.clock.getCurrentTime())
 
         if matchSetAlarm:
             newAlarm = ALARM(matchSetAlarm.group(1))
@@ -55,18 +56,24 @@ def main():
     #condition = weather.getCondition()
     #temperature = weather.getTemperature()
     #print (temperature)
+    
     weather = WEATHER()
     myAlarms = []
     clock = CLOCK(myAlarms)
-    allInput = ALLINPUT(clock, myAlarms, weather)
-    #clock.start()
-    clockHandler = ThreadHandler(target=clock.start_clock_loop)
-    inputHandler = ThreadHandler(target=allInput.userInputListener)
-    clockHandler.start()
-    time.sleep(1)
-    inputHandler.start()
-    clockHandler.join()
-    inputHandler.join()
+#    allInput = ALLINPUT(clock, myAlarms, weather)
+    
+    controller = CONTROLLER(clock)
+    controller.displayView()
+    
+#    clockHandler = ThreadHandler(target=clock.start_clock_loop)
+#    inputHandler = ThreadHandler(target=allInput.userInputListener)
+#    controllerHandler = ThreadHandler(target=controller.displayView)
+#    clockHandler.start()
+#    controllerHandler.start()
+#    time.sleep(1)
+#    inputHandler.start()
+#    clockHandler.join()
+#    inputHandler.join()
 
 if __name__ == "__main__":
     main()
