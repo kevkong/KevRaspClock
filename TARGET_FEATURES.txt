@@ -3,12 +3,19 @@ Targeted features:
 -Show date DONE
 -Show weather DONE
 -Show outside temperature DONE
--Multiple alarms
--Wake up with sounds/mp3
+-Multiple alarms DONE
+-Wake up with sounds/mp3 DONE
+-GUI
+-Snooze Function
 -Have display
 -Wake up with podcast
 -Wake up with QR code
 -Wake up with video of
+-Speak alarm time with TTS
+-Motion activated time and weather TTS
+-Reminder with STT
+-Transmit Music to Radio Alarm Clock
+-Web interface/control
 -Show inside temperature
 -Show news
 -Wake screen with motion to save power and avoid glare
