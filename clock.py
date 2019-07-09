@@ -42,4 +42,7 @@ class CLOCK(object):
     
     def getCurrentDate(self):
         return dt.today().strftime(self.dateFormat)
+    
+    def getCurrentDay(self):
+        return dt.today().strftime(self.dayFormat)
         

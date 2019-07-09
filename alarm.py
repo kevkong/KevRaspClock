@@ -1,3 +1,5 @@
+import os
+
 class ALARM(object):
     def __init__(self, end):
         print ("Setting Alarm")
@@ -12,3 +14,9 @@ class ALARM(object):
 
     def turnOff(self):
         self.switch = False
+        
+    def wakeSound(self):
+        os.system("omxplayer -o local Sounds/example.mp3 &")
+#        os.system("omxplayer -o local --loop Sounds/example.mp3 &")
+#        time.sleep(5)
+#        os.system("killall omxplayer.bin")

@@ -25,4 +25,4 @@ class WEATHER(object):
 
     def getCondition(self):
         #can fetch picture from openweather and use
-        return self.data['weather']['description']
+        return self.data['weather'][0]['description']

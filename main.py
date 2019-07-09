@@ -62,8 +62,8 @@ def main():
     clock = CLOCK(myAlarms)
 #    allInput = ALLINPUT(clock, myAlarms, weather)
     
-    controller = CONTROLLER(clock)
-    controller.displayView()
+    controller = CONTROLLER(clock, myAlarms, weather)
+    controller.startDisplayView()
     
 #    clockHandler = ThreadHandler(target=clock.start_clock_loop)
 #    inputHandler = ThreadHandler(target=allInput.userInputListener)
