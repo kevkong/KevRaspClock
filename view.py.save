@@ -8,8 +8,7 @@ class VIEW(object):
         self.alarmHour = 0
         self.alarmMinute = 0
         
-        self.app = App(title="KevClockPi", width=480, height=320)
-        self.app.full_screen = False
+        self.app = App(title="KevClockPi", width=800, height=320)
         self.topPanel0 = Box(self.app, width='fill', height=110)
         self.middlePanel0 = Box(self.app, width='fill', height=100)
         self.botPanel0 = Box(self.app, width='fill', height=110)
@@ -37,10 +36,10 @@ class VIEW(object):
         self.alarmSetBox = Box(self.box5, layout='grid', visible=False)
         buttonWidth = 30
         buttonHeight = 15
-        self.hourUpButton = PushButton(self.alarmSetBox, grid=[0,0,2,1], width=buttonWidth, height=buttonHeight, command=self.upAlarmHour, image = "/home/pi/KevRaspClock/Images/baseline_arrow_drop_up_black_18dp.png")
-        self.hourDownButton = PushButton(self.alarmSetBox, grid=[0,3,2,1], width=buttonWidth, height=buttonHeight, command=self.downAlarmHour, image = "/home/pi/KevRaspClock/Images/baseline_arrow_drop_down_black_18dp.png")
-        self.minuteUpButton = PushButton(self.alarmSetBox, grid=[3,0,2,1], width=buttonWidth, height=buttonHeight, command=self.upAlarmMinute, image = "/home/pi/KevRaspClock/Images/baseline_arrow_drop_up_black_18dp.png")
-        self.minuteDownButton = PushButton(self.alarmSetBox, grid=[3,3,2,1], width=buttonWidth, height=buttonHeight, command=self.downAlarmMinute, image = "/home/pi/KevRaspClock/Images/baseline_arrow_drop_down_black_18dp.png")
+        self.hourUpButton = PushButton(self.alarmSetBox, grid=[0,0,2,1], width=buttonWidth, height=buttonHeight, command=self.upAlarmHour, image = "Images/baseline_arrow_drop_up_black_18dp.png")
+        self.hourDownButton = PushButton(self.alarmSetBox, grid=[0,3,2,1], width=buttonWidth, height=buttonHeight, command=self.downAlarmHour, image = "Images/baseline_arrow_drop_down_black_18dp.png")
+        self.minuteUpButton = PushButton(self.alarmSetBox, grid=[3,0,2,1], width=buttonWidth, height=buttonHeight, command=self.upAlarmMinute, image = "Images/baseline_arrow_drop_up_black_18dp.png")
+        self.minuteDownButton = PushButton(self.alarmSetBox, grid=[3,3,2,1], width=buttonWidth, height=buttonHeight, command=self.downAlarmMinute, image = "Images/baseline_arrow_drop_down_black_18dp.png")
         alarmSetTextSize = 15
         self.hourText = Text(self.alarmSetBox, text="00", size=alarmSetTextSize, grid=[0,1,2,2])
         self.minuteText = Text(self.alarmSetBox, text="00", size=alarmSetTextSize, grid=[3,1,2,2])

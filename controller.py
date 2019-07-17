@@ -3,13 +3,14 @@ from alarm import ALARM
 from sysstatus import SYSSTATUS
 
 class CONTROLLER(object):
-    def __init__(self, clock, alarms, weather):
+    def __init__(self, clock, alarms, weather, advice):
         print("Setup view")
-        self.view = VIEW()
+        self.view = VIEW(alarms)
         print("Setup clock")
         self.clock = clock
         self.alarms = alarms
         self.weather = weather
+        self.advice = advice
         self.sysStat = SYSSTATUS()
         print("Setup bindings")
         self.binding()
@@ -33,6 +34,7 @@ class CONTROLLER(object):
         self.view.updateTime(time)
         self.view.updateDateAndDay(date, day)
         self.view.updateWeather(weatherTemp, weatherCond)
+        self.view.updateAdvice(self.advice.getAdvice())
         self.view.setColors()
         self.view.display()
 
@@ -43,6 +45,8 @@ class CONTROLLER(object):
             weatherTemp = str(self.weather.getTemperature()) + " " + chr(176) + "C"
             weatherCond = self.weather.getCondition()
             self.view.updateWeather(weatherTemp, weatherCond)
+            self.view.updateAdvice(self.advice.getAdvice())
+            
         if (time == "00:00:00"):
             date = self.clock.getCurrentDate()
             day = self.clock.getCurrentDay()
@@ -52,10 +56,11 @@ class CONTROLLER(object):
         if (self.view.checkIsAlarmSet()):
             newAlarm = ALARM(self.view.getAlarmTime())
             self.alarms.append(newAlarm)
-        if (len(self.alarms) > 0):
-            self.view.updateAlarmTimes(self.getAlarmsStr())
-        else:
-            self.view.updateAlarmTimes("--:--")
+            self.view.createAlarmText(self.view.getAlarmTime())
+#        if (len(self.alarms) > 0):
+#            self.view.updateAlarmTimes(self.getAlarmsStr())
+#        else:
+#            self.view.updateAlarmTimes("--:--")
             
     def getAlarmsStr(self):
         tmpStr = ""

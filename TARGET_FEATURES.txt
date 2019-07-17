@@ -5,7 +5,7 @@ Targeted features:
 -Show outside temperature DONE
 -Multiple alarms DONE
 -Wake up with sounds/mp3 DONE
--GUI
+-GUI DONE
 -Snooze Function
 -Have display
 -Wake up with podcast
