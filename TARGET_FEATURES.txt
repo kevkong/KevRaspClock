@@ -7,7 +7,8 @@ Targeted features:
 -Wake up with sounds/mp3 DONE
 -GUI DONE
 -Snooze Function
--Have display
+-Have display DONE
+-piHole
 -Wake up with podcast
 -Wake up with QR code
 -Wake up with video of
