@@ -9,8 +9,14 @@ from utils import ThreadHandler
 from clock import CLOCK
 from controller import CONTROLLER
 from advice import ADVICE
+import pihole as ph
 
 def main():
+    
+    pihole = ph.PiHole("192.168.0.10")
+#    print(pihole.status, pihole.domain_count, pihole.queries, pihole.blocked, pihole.ads_percentage,
+#pihole.unique_domains, pihole.forwarded, pihole.cached, pihole.total_clients, pihole.unique_clients,
+#pihole.total_queries)
     #weather = WEATHER()
     #condition = weather.getCondition()
     #temperature = weather.getTemperature()
@@ -22,7 +28,7 @@ def main():
     advice = ADVICE()
 #    allInput = ALLINPUT(clock, myAlarms, weather)
     
-    controller = CONTROLLER(clock, myAlarms, weather, advice)
+    controller = CONTROLLER(clock, myAlarms, weather, advice, pihole)
     controller.startDisplayView()
     
 #    clockHandler = ThreadHandler(target=clock.start_clock_loop)
