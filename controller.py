@@ -29,12 +29,12 @@ class CONTROLLER(object):
         time= self.clock.getCurrentTime()
         date = self.clock.getCurrentDate()
         day = self.clock.getCurrentDay()
-        weatherTemp = str(self.weather.getTemperature()) + " " + chr(176) + "C"
-        weatherCond = self.weather.getCondition()
+        # weatherTemp = str(self.weather.getTemperature()) + " " + chr(176) + "C"
+        # weatherCond = self.weather.getCondition()
         self.view.updateSysInfo(self.sysStat.getCpuTemp(), self.sysStat.getCpuLoad())
         self.view.updateTime(time)
         self.view.updateDateAndDay(date, day)
-        self.view.updateWeather(weatherTemp, weatherCond)
+        # self.view.updateWeather(weatherTemp, weatherCond)
         self.view.updateAdvice(self.advice.getAdvice())
         # self.view.updatePiHole(self.getPiHoleDict())
         self.view.setColors()
@@ -46,9 +46,9 @@ class CONTROLLER(object):
         # self.pihole.refresh()
         # self.view.updatePiHole(self.getPiHoleDict())
         if (time[:-2] == "00"):
-            weatherTemp = str(self.weather.getTemperature()) + " " + chr(176) + "C"
-            weatherCond = self.weather.getCondition()
-            self.view.updateWeather(weatherTemp, weatherCond)
+            # weatherTemp = str(self.weather.getTemperature()) + " " + chr(176) + "C"
+            # weatherCond = self.weather.getCondition()
+            # self.view.updateWeather(weatherTemp, weatherCond)
             self.view.updateAdvice(self.advice.getAdvice())
             
         if (time == "00:00:00"):
