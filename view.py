@@ -75,7 +75,7 @@ class VIEW(object):
         
         self.adviceText = Text(self.box7, size=round(self.otherTS*3/4))
         self.adviceText.tk.config(wraplength=175*self.sfW)
-        self.piHoleText = Text(self.box8, size=round(self.otherTS*5/9))
+        # self.piHoleText = Text(self.box8, size=round(self.otherTS*5/9))
     
     def dummyCommand(self):
         self.sfW = round(self.dummy.width/self.appWidth)
@@ -170,8 +170,8 @@ class VIEW(object):
     def updateAdvice(self, advice):
         self.adviceText.value = advice
 
-    def updatePiHole(self, piHoleDict):
-        self.piHoleText.value = "Pi-Hole\n"
-        for tag, piHoleInfo in piHoleDict.items():
-            self.piHoleText.value += tag + ": " + piHoleInfo + "\n"
+    # def updatePiHole(self, piHoleDict):
+    #     self.piHoleText.value = "Pi-Hole\n"
+    #     for tag, piHoleInfo in piHoleDict.items():
+    #         self.piHoleText.value += tag + ": " + piHoleInfo + "\n"
             
