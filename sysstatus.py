@@ -1,5 +1,7 @@
 import psutil
 
+print(psutil.sensors_temperatures())
+
 class SYSSTATUS(object):
     def getCpuTemp(self):
         temp = psutil.sensors_temperatures()['cpu-thermal'][0].current
