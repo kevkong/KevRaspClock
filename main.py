@@ -13,7 +13,7 @@ import pihole as ph
 
 def main():
     
-    pihole = ph.PiHole("192.168.0.10")
+    pihole = ph.PiHole("192.168.100.49")
 #    print(pihole.status, pihole.domain_count, pihole.queries, pihole.blocked, pihole.ads_percentage,
 #pihole.unique_domains, pihole.forwarded, pihole.cached, pihole.total_clients, pihole.unique_clients,
 #pihole.total_queries)
